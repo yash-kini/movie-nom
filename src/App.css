@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+  padding: 25px;
+  background-image: linear-gradient(#141414, #0E1141);
+  height: 1080px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.movie {
+
+}
+
+.movie-top {
+  height: 500px;
+  display: flex;
+
+}
+
+.movie-details {
+  margin: 20px;
+  text-align: left;
+  color: white;
+
+}
+
+#poster {
+  width:  202px;
+  height: 300px;
+  margin: 0%;
+}
+/* Style the button and place it in the middle of the container/image */
+.btn {
+  max-width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#nom-container {
+  display: flex;
+  margin-bottom: 10px;
+  width:  300px;
+}
+
+#nom-poster {
+  width:  100px;
+  height: 150px;
+  margin: 0%;
+}
+
+#nom-details {
+  width: 200px;
+  margin: 10px;
+}
+
+#nom-title {
+  color: white;
+  text-align: left;
+}
+
+#plot {
+  font-size: 18px;
+}
+
+#title {
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
