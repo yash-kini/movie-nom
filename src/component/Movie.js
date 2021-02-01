@@ -18,6 +18,7 @@ class Movie extends React.Component {
                 content='Nominate'
                 color='orange'
                 onClick={this.props.nominate}
+                disabled={!this.props.canNominate}
               />
               <p id="plot">{movie.Plot}</p>
               <p>Director: {movie.Director}</p>

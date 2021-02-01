@@ -16,7 +16,6 @@ function formatMovie(movie) {
         icon="times"
       />
     </div> 
-
   </div>
   )
 }

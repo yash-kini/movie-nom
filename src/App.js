@@ -17,7 +17,7 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getMovie = this.getMovie.bind(this);
     this.nominate = this.nominate.bind(this);
-
+    this.validNomination = this.validNomination.bind(this);
   }
 
   getMovie(){
@@ -40,11 +40,26 @@ class App extends React.Component {
   }
 
   nominate() {
-    console.log("nominate");
-    let nomCopy = this.state.noms.slice();
-    nomCopy.push(this.state.movie);
-    this.setState({noms: nomCopy});
-    console.log(this.state.noms);
+    if (this.validNomination()){
+      let nomCopy = this.state.noms.slice();
+      nomCopy.push(this.state.movie);
+      this.setState({noms: nomCopy});
+      console.log({"nominations":this.state.noms});
+    }
+
+  }
+
+  validNomination(){
+    let nomIDs = this.state.noms.map(m => m.imdbID);
+    let movieID = this.state.movie.imdbID;
+    console.log("validNom", nomIDs, movieID, movieID in nomIDs);
+    if (nomIDs.includes(movieID)){
+      return false;
+    }
+    if (this.state.noms.length >= 5){
+      return false;
+    } 
+    return true;
   }
 
   render() {
@@ -64,6 +79,7 @@ class App extends React.Component {
                 <Movie
                   movie={this.state.movie} 
                   nominate={this.nominate}
+                  canNominate={this.validNomination()}
                 />
               </Grid.Column>
               <Grid.Column >
